@@ -31,29 +31,29 @@ const game = (choice = "") => {
     } else if (choice === 'paper') {
         if (moves[comp] === 'rock') {
             console.log(`You chose: paper\n Computer chose: rock\n Paper beats rock! You win`)
-            gameData.ties++
+            gameData.wins++
             gameData.total++
         } else if (moves[comp] === 'paper') {
             console.log(`You chose: paper\n Computer chose: paper\n It's a tie!`)
-            gameData.losses++
+            gameData.ties++
             gameData.total++
         } else if (moves[comp] === 'scissors') {
             console.log(`You chose: paper\n Computer chose: scissors\n Scissors beats paper! You lose!`)
-            gameData.wins++
+            gameData.losses++
             gameData.total++
         }
     } else {
         if (moves[comp] === 'rock') {
             console.log(`You chose: scissors\n Computer chose: rock\n Rock beats scissors! You lose!`)
-            gameData.ties++
+            gameData.loses++
             gameData.total++
         } else if (moves[comp] === 'paper') {
             console.log(`You chose: scissors\n Computer chose: paper\n Scissors beats paper! You win!`)
-            gameData.losses++
+            gameData.wins++
             gameData.total++
         } else if (moves[comp] === 'scissors') {
             console.log(`You chose: scissors\n Computer chose: scissors\n It's a tie!`)
-            gameData.wins++
+            gameData.ties++
             gameData.total++
         }
     }
