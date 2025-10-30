@@ -45,7 +45,7 @@ const game = (choice = "") => {
     } else {
         if (moves[comp] === 'rock') {
             console.log(`You chose: scissors\n Computer chose: rock\n Rock beats scissors! You lose!`)
-            gameData.loses++
+            gameData.losses++
             gameData.total++
         } else if (moves[comp] === 'paper') {
             console.log(`You chose: scissors\n Computer chose: paper\n Scissors beats paper! You win!`)
