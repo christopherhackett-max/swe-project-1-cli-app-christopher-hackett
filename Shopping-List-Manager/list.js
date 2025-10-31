@@ -40,7 +40,7 @@ const viewList = () => {
     const totalItems = shoppingList.length
     let totalPrice = 0;
     for (item of shoppingList) {
-        totalPrice += item.price
+        totalPrice += item.price * item.quantity
     }
     console.log(`Total Items: ${totalItems}`)
     console.log(`Total Price: $${totalPrice}`)
