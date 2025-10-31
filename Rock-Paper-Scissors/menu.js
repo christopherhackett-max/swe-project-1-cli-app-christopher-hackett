@@ -13,7 +13,7 @@ const showMenu = () => {
         const menuChoice = prompt('Choose an Action (Enter 1-3): ').trim();
         if (menuChoice === '1') {
             console.clear();
-            const choice = prompt(`Choose a move (rock, paper, or scissors): `);
+            const choice = prompt(`Choose a move (rock, paper, or scissors) (type in your move): `);
             game(choice);
         } else if (menuChoice === '2') {
             console.clear();
