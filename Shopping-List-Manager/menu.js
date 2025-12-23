@@ -20,7 +20,7 @@ const showMenu = () => {
             addItem(name, quantity, price)
         } else if (menuChoice === '2') {
             console.clear();
-            const name = prompt(`Enter item name to remove: `)
+            const name = prompt(`Enter item name to remove (type all to remove all): `)
             const quantity = prompt(`Enter quantity to remove: `)
             removeItem(name, quantity)
         } else if (menuChoice === '3') {

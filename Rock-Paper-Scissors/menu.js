@@ -1,10 +1,25 @@
 const prompt = require('prompt-sync')({ sigint: true });
-const { game, stats, } = require('./game.js');
 
-const showMenu = () => {
-    let isRunning = true;
+const Game = require('./game')
 
-    while (isRunning) {
+class App {
+    constructor() {
+        this.isRunning = true
+    }
+
+    start() {
+        console.clear()
+        console.log('Welcome to Rock Paper Scissors!')
+        this.game = new Game()
+
+        while (this.isRunning) {
+            this.showMenu()
+        }
+
+        console.log("Come Play Again Some Time!")
+    }
+
+    showMenu() {
         console.log('Menu:');
         console.log('1. Play Round');
         console.log('2. View Stats');
@@ -14,16 +29,16 @@ const showMenu = () => {
         if (menuChoice === '1') {
             console.clear();
             const choice = prompt(`Choose a move (rock, paper, or scissors) (type in your move): `);
-            game(choice);
+            this.game.play(choice);
         } else if (menuChoice === '2') {
             console.clear();
             console.log(`Current Stats:`);
-            stats();
+            this.game.viewStats()
         } else if (menuChoice === '3') {
             console.clear();
             console.log(`Final Stats:`);
-            stats();
-            isRunning = false;
+            this.game.viewStats()
+            this.isRunning = false;
         } else {
             console.log('Invalid option, try again.');
         }
@@ -33,4 +48,5 @@ const showMenu = () => {
     }
 }
 
-module.exports = { showMenu };
+
+module.exports = App;

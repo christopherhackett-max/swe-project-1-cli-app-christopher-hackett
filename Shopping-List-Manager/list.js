@@ -18,6 +18,10 @@ const addItem = (name, quantity, price) => {
 
 const removeItem = (name, quantity) => {
     console.log(`Removed ${quantity} ${name} from your shopping list!`)
+    if (name.toLowerCase() === 'all') {
+        shoppingList.length = 0
+        return;
+    }
     for (item of shoppingList) {
         if (item.name === name) {
             item.quantity -= quantity
@@ -37,10 +41,11 @@ const viewList = () => {
     for (item of shoppingList) {
         console.log(`- ${item.quantity} ${item.name}: $${item.price}\n`)
     }
-    const totalItems = shoppingList.length
+    const totalItems = 0;
     let totalPrice = 0;
     for (item of shoppingList) {
         totalPrice += item.price * item.quantity
+        totalItems += item.quantity
     }
     console.log(`Total Items: ${totalItems}`)
     console.log(`Total Price: $${totalPrice}`)
