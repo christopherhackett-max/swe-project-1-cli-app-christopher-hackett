@@ -16,7 +16,7 @@ class Game {
         const computerChoice = this.#moves[comp];
         const normalizedChoice = choice.trim().toLowerCase();
 
-        if (!this.#beats.hasOwnProperty(normalizedChoice)) {
+        if (!this.#moves.includes(normalizedChoice)) {
             console.log(`Invalid choice! Please choose rock, paper, or scissors.`);
             return;
         }
