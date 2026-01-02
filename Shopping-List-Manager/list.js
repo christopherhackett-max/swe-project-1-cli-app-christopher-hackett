@@ -80,7 +80,7 @@ class Manager {
         }
         console.log(`Your Shopping List:`)
         for (const item of this.#list) {
-            console.log(`- ${item.quantity} ${item.name}: $${item.price}`)
+            console.log(`- ${item.quantity} ${item.name}: $${item.price}\n`)
         }
         let totalItems = 0;
         let totalPrice = 0;
