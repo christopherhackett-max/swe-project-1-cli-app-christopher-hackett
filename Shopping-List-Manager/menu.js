@@ -1,10 +1,25 @@
 const prompt = require('prompt-sync')({ sigint: true });
-const { addItem, removeItem, viewList } = require('./list.js');
 
-const showMenu = () => {
-    let isRunning = true;
+const Manager = require('./list.js');
 
-    while (isRunning) {
+class App {
+    constructor() {
+        this.isRunning = true
+    }
+
+    start() {
+        console.clear()
+        console.log('Welcome To Your Shopping List Manager!')
+        this.manager = new Manager()
+
+        while (this.isRunning) {
+            this.showMenu()
+        }
+
+        console.log("Goodbye!")
+    }
+
+    showMenu() {
         console.log('Menu:');
         console.log('1. Add Item');
         console.log('2. Remove item');
@@ -17,18 +32,18 @@ const showMenu = () => {
             const name = prompt(`Enter item name: `)
             const quantity = prompt(`Enter quantity: `)
             const price = prompt(`Enter price per item: `)
-            addItem(name, quantity, price)
+            this.manager.addItem(name, quantity, price)
         } else if (menuChoice === '2') {
             console.clear();
             const name = prompt(`Enter item name to remove (type all to remove all): `)
             const quantity = prompt(`Enter quantity to remove: `)
-            removeItem(name, quantity)
+            this.manager.removeItem(name, quantity)
         } else if (menuChoice === '3') {
             console.clear()
-            viewList()
+            this.manager.viewList()
         } else if (menuChoice === '4') {
             console.clear();
-            isRunning = false;
+            this.isRunning = false;
         } else {
             console.log('Invalid option, try again.');
         }
@@ -38,4 +53,4 @@ const showMenu = () => {
     }
 }
 
-module.exports = { showMenu };
+module.exports = App;
