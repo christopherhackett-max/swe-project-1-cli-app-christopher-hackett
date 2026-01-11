@@ -4,4 +4,4 @@ One aspect that was challenging was implementing input validation. Because the p
 
 2. Share one technical concept that you gained a deeper understanding of through building this project. Explain that concept in simple terms and explain how it is used in your project.
 
-[Write your reflection here]
+ One technical concept I gained a deeper understanding of is refactoring. Refactoring is the process of restructuring and/or reorganzing code. In my project I refactored my code from using functions to using a class system. I had to rewrite functions as methods and store data as instance properties. 
